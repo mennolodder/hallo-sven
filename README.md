@@ -1,2 +1,2 @@
 # hallo-sven
-Sven leert 
+Sven leert hoe je Angular programmeert.
