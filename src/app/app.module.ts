@@ -11,9 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HartjesTellerComponent } from './components/hartjes-teller/hartjes-teller.component';
+import { PingPongComponent } from './components/ping-pong/ping-pong.component';
 
 @NgModule({
-  declarations: [AppComponent, TekstSvenComponent, HartjesTellerComponent],
+  declarations: [AppComponent, TekstSvenComponent, HartjesTellerComponent, PingPongComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
