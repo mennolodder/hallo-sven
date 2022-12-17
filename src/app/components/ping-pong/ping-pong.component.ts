@@ -11,16 +11,39 @@ export class PingPongComponent implements AfterViewInit {
 
   balTop = 200;
   balLeft = 200;
+
+  balOmlaag = false;
+
   ngAfterViewInit(): void {
     const i = setInterval(() => {
-      this.moveBal();
-    }, 10);
+      this.volgendeTijd();
+    }, 15);
   }
 
-  moveBal(): void {
-    this.balTop = this.balTop + 1;
+  volgendeTijd(): void {
+    this.stuiteren();
+    this.verplaatsBal();
+  }
+
+  private verplaatsBal() {
+    if (this.balOmlaag) {
+      this.balTop = this.balTop + 1;
+    } else {
+      this.balTop = this.balTop - 1;
+    }
+
+    //this.balLeft = this.balLeft + 1;
+
     this.bal.nativeElement.style.top = this.balTop.toString() + 'px';
-    this.balLeft = this.balLeft + 1;
     this.bal.nativeElement.style.left = this.balLeft.toString() + 'px';
+  }
+
+  private stuiteren() {
+    if (this.balTop < 0) {
+      this.balOmlaag = true;
+    }
+    if (this.balTop > 400 - 25) {
+      this.balOmlaag = false;
+    }
   }
 }
