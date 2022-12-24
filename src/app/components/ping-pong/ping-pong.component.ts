@@ -1,5 +1,10 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
+const breedte = 500;
+const hoogte = 400;
+const balSize = 25;
+const randBreedte = 20;
+
 @Component({
   selector: 'app-ping-pong',
   templateUrl: './ping-pong.component.html',
@@ -50,16 +55,16 @@ export class PingPongComponent implements AfterViewInit {
     }
 
     //onder
-    if (this.balTop > 400 - 25) {
+    if (this.balTop > hoogte - balSize) {
       this.balOmlaag = false;
     }
 
     //rechts
-    if (this.balLeft > 500 - 25) {
+    if (this.balLeft > breedte - (balSize + randBreedte)) {
       this.balNaarRechts = false;
     }
-    if (this.balLeft < 0) {
-      console.log('stuiter');
+
+    if (this.balLeft < 0 + randBreedte) {
       this.balNaarRechts = true;
     }
   }
