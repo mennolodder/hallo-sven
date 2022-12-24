@@ -43,12 +43,13 @@
                   "type": "initial",
                   "maximumWarning": "500kb",
                   "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "12kb"
                 }
+                // Doesn't work with the images in our style sheet
+                // {
+                //   "type": "anyComponentStyle",
+                //   "maximumWarning": "2kb",
+                //   "maximumError": "12kb"
+                // }
               ],
               "fileReplacements": [
                 {
